@@ -9,7 +9,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     var options = '';
     if (request.body.queryResult.intent.displayName === 'getJoeySpecified'){
       	options = {
-          url: 'https://tuftsjoeytracker.herokuapp.com/getJoeySpecified',
+          url: 'https://joeytrackerapi.herokuapp.com/getJoeySpecified',
           headers: {
               'User-Agent': 'Request-Promise',
               'data' : request.body.queryResult.parameters.tufts_locations
@@ -18,7 +18,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     	};
     } else if (request.body.queryResult.intent.displayName === 'getJoeyUnspecified') {
         options = {
-          url: 'https://tuftsjoeytracker.herokuapp.com/getJoeyUnspecified',
+          url: 'https://joeytrackerapi.herokuapp.com/getJoeyUnspecified',
           json: true // Automatically parses the JSON string in the response
     	};
     }
